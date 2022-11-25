@@ -21,6 +21,7 @@ const NavBar = ({ navElementList }) => {
       {navElementList.map((elem, index) => {
         return (
           <motion.div
+            key={elem.name}
             initial={{
               x: "-20%",
               y: 25 + 10 * index,

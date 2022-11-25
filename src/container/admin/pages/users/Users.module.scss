@@ -5,10 +5,49 @@
   margin-top: -1px;
 
   .UserChooser {
-    width: 80%;
-    margin: 4rem auto;
+    display: flex;
+    width: 40%;
+    min-width: fit-content;
+    margin: 2rem auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem 0.2rem;
+    background-color: #ffff;
+    box-shadow: -0rem 0rem 0.15rem grey;
+    font-size: 0.9rem;
 
-    height: 10rem;
-    background-color: aqua;
+    .typeholder {
+      padding: 0.8rem 0.5rem;
+      border-radius: 5%;
+      font-size: 500;
+      cursor: pointer;
+      color: #476282;
+
+      &.active {
+        color: #1967d2;
+        position: relative;
+        &::after {
+          content: " ";
+          background-color: #1967d2;
+          height: 0.2rem;
+          width: 100%;
+          right: 0;
+          bottom: -0.5rem;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .UserInfoTable {
+    width: 60rem;
+    max-width: 95%;
+
+    margin: auto;
+    height: 40rem;
+    background-color: white;
+    box-shadow: 0 0 0.1rem grey;
+    overflow-y: scroll;
+    height: fit-content;
   }
 }
