@@ -1,0 +1,67 @@
+.NavBar {
+  height: 100vh;
+  max-height: 100vh;
+  background-color: rgb(5, 30, 52);
+
+  .Header {
+    display: flex;
+    gap: 1rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 1rem 1rem;
+    border-bottom: 0.1rem solid #1e3549;
+    svg {
+      width: 2rem;
+    }
+  }
+
+  .NavElement {
+    display: block;
+    color: #ffff;
+    text-decoration: none;
+    overflow-y: scroll;
+    overflow-y: hidden;
+    padding: 0 0.5rem;
+
+    .NavElementContainer {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      transition: background-color 0.1s ease-in-out, color 0 1s;
+
+      svg {
+        width: 1.2rem;
+      }
+
+      .textHolder {
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 0.9rem;
+        /* here is where the navigation with is decided*/
+        width: 9vw;
+        min-width: 10rem;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    &.active {
+      color: rgb(5, 30, 52);
+      .NavElementContainer {
+        background-color: white;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
