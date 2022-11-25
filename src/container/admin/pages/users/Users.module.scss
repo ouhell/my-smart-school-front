@@ -23,19 +23,15 @@
       font-size: 500;
       cursor: pointer;
       color: #476282;
+      position: relative;
 
-      &.active {
-        color: #1967d2;
-        position: relative;
-        &::after {
-          content: " ";
-          background-color: #1967d2;
-          height: 0.2rem;
-          width: 100%;
-          right: 0;
-          bottom: -0.5rem;
-          position: absolute;
-        }
+      .underline {
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        right: 0;
+        height: 0.2rem;
+        background: #1967d2;
       }
     }
   }

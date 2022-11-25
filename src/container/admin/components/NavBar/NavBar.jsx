@@ -19,6 +19,7 @@ const NavBar = ({ navElementList }) => {
         <motion.div initial={{}}>Administrator</motion.div>
       </motion.header>
       {navElementList.map((elem, index) => {
+        let isActivated = false;
         return (
           <motion.div
             key={elem.name}
@@ -40,13 +41,18 @@ const NavBar = ({ navElementList }) => {
             <NavLink
               end
               to={elem.to}
-              className={({ isActive }) =>
-                isActive
+              className={({ isActive }) => {
+                return isActive
                   ? classes.NavElement + " " + classes.active
-                  : classes.NavElement
-              }
+                  : classes.NavElement;
+              }}
             >
               <div className={classes.NavElementContainer}>
+                {isActivated ? (
+                  <motion.div className={classes.line} layoutId="line">
+                    lol
+                  </motion.div>
+                ) : null}
                 {elem.icon}
                 <div className={classes.textHolder}>{elem.name}</div>
               </div>

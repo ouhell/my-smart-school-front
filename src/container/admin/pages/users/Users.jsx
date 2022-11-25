@@ -1,6 +1,7 @@
 import classes from "./Users.module.scss";
 import { useState } from "react";
 import StudentTable from "../../components/StudentTable/StudentTable";
+import { motion } from "framer-motion";
 const userTypes = [
   {
     typeName: "students",
@@ -28,15 +29,18 @@ const Users = () => {
           return (
             <div
               key={type.typeName}
-              className={
-                classes.typeholder +
-                (type.typeName === selectedUserType ? " " + classes.active : "")
-              }
+              className={classes.typeholder}
               onClick={() => {
                 setSelectedUserType(type.typeName);
               }}
             >
               {type.typeName}
+              {type.typeName === selectedUserType ? (
+                <motion.div
+                  className={classes.underline}
+                  layoutId="underline"
+                ></motion.div>
+              ) : null}
             </div>
           );
         })}
