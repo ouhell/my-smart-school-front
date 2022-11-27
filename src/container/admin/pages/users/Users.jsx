@@ -29,7 +29,10 @@ const Users = () => {
           return (
             <div
               key={type.typeName}
-              className={classes.typeholder}
+              className={
+                classes.typeholder +
+                (type.typeName === selectedUserType ? " " + classes.active : "")
+              }
               onClick={() => {
                 setSelectedUserType(type.typeName);
               }}

@@ -33,17 +33,26 @@
         height: 0.2rem;
         background: #1967d2;
       }
+
+      &.active {
+        color: #1967d2;
+      }
     }
   }
   .UserInfoTable {
     width: 60rem;
     max-width: 95%;
-
     margin: auto;
     height: 40rem;
     background-color: white;
     box-shadow: 0 0 0.1rem grey;
     overflow-y: scroll;
     height: fit-content;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
   }
 }
